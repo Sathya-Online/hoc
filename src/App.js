@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import BaseComponent from './BaseComponent';
+import SmallComponent from './SmallComponent';
+import { withEffect } from './HOC';
 
 function App() {
+  const NewBaseComponent = withEffect(BaseComponent);
+  const NewSmallComponent = withEffect(SmallComponent);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <NewBaseComponent value="BaseComponent"/>
+        <NewSmallComponent value="SmallComponent"/>
     </div>
   );
 }
